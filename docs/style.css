@@ -71,9 +71,9 @@ a { color: inherit; }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+  grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
   gap: 56px;
-  align-items: end;
+  align-items: center;
 }
 
 .hero-grid > * { min-width: 0; }
@@ -115,6 +115,7 @@ h1 {
 .hero-summary {
   width: 100%;
   max-width: 100%;
+  margin-top: 28px;
   padding: 24px 26px;
   border-left: 4px solid #77cff8;
   background: rgba(255, 255, 255, 0.09);
@@ -123,6 +124,22 @@ h1 {
 }
 
 .hero-summary p { margin: 0; }
+
+.hero-visual {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 24px 58px rgba(0, 0, 0, 0.22);
+}
+
+.hero-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
 .philosophy { padding: 76px 0; background: var(--paper); }
 .prose { max-width: 900px; }
 
