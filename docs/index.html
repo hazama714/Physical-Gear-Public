@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Physical Gear Public — 3DプリンターとRCサーボで製作する10軸上半身ロボットの紹介・組立資料。">
+  <meta name="theme-color" content="#102f4a">
+  <title>Physical Gear Public | PROJECT SALIERI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top">PROJECT SALIERI</a>
+      <span class="site-name">Physical Gear Public</span>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">PROJECT SALIERI</p>
+          <h1>Physical Gear Public</h1>
+          <p class="tagline">ロボットを作ることから、技術を学ぶ。</p>
+          <span class="version">v0.1.0-beta（公開準備中）</span>
+        </div>
+        <div class="hero-summary">
+          <p>3Dプリンターと一般的なRCサーボで製作する、首2軸・左右腕各4軸の10軸上半身ロボットです。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="philosophy" aria-labelledby="philosophy-title">
+      <div class="container prose">
+        <h2 id="philosophy-title">好奇心こそ、学びの原点。</h2>
+        <p>ロボットを作ってみたい。自分で動かしてみたい。</p>
+        <p>Physical Gearは、そんな好奇心から始められるロボット製作プロジェクトです。</p>
+        <p>3Dプリンター、一般的なRCサーボ、Arduino、そしてUnity。身近な技術を組み合わせることで、個人や学校でも人型ロボットの基本構造と制御を体験できるようにすることを目指しています。</p>
+        <p class="learning-cycle"><strong>作る → 動かす → 疑問を持つ → 調べる → 改造する</strong></p>
+        <p>なぜサーボは回るのか。どうすれば腕を狙った場所へ動かせるのか。なぜ思いどおりに動かないのか。</p>
+        <p>一つの疑問から、電子回路、プログラミング、力学、材料、そしてAIへと興味が広がっていきます。</p>
+        <p>Physical Gearは完成品を提供するものではありません。自分の手で組み立て、動かし、仕組みを理解し、修理や改造を重ねていくための土台です。</p>
+        <p>最初から完璧なロボットを目指す必要はありません。</p>
+        <p>まず作って、動かしてみる。</p>
+        <p>そこから新しい発見が始まります。</p>
+        <p class="signature"><strong>PROJECT SALIERI — Physical Gear</strong></p>
+      </div>
+    </section>
+
+    <section class="contents" aria-labelledby="contents-title">
+      <div class="container">
+        <h2 id="contents-title">組立説明</h2>
+        <ol class="contents-grid">
+          <li><a href="#step-01"><span>01</span>用意するもの</a></li>
+          <li><a href="#step-02"><span>02</span>Arduinoとサーボの対応表</a></li>
+          <li><a href="#step-03"><span>03</span>STLのパーツ群</a></li>
+          <li><a href="#step-04"><span>04</span>基本パーツの組み立て方</a></li>
+          <li><a href="#step-05"><span>05</span>ディスクロールへのBB弾挿入</a></li>
+          <li><a href="#step-06"><span>06</span>ボディの組み立て</a></li>
+          <li><a href="#step-07"><span>07</span>全体の組み上げ</a></li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="step-01" class="step-section">
+      <div class="container">
+        <p class="step-number">01</p>
+        <h2>用意するもの</h2>
+        <p class="section-intro">必要な電子部品、サーボ、ネジ、6mm BB弾、電源、USBケーブル、三脚を確認します。</p>
+        <figure class="figure-card">
+          <a href="assets/images/Physical Gear 準備部品一覧(2).png" target="_blank" rel="noopener noreferrer">
+            <img src="assets/images/Physical Gear 準備部品一覧(2).png" alt="Physical Gearの準備部品一覧">
+          </a>
+          <figcaption>画像をクリックすると原寸で表示します。</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="step-02" class="step-section alternate">
+      <div class="container">
+        <p class="step-number">02</p>
+        <h2>Arduinoとサーボの対応表</h2>
+        <p class="section-intro">PCA9685のCH0〜CH9とServo ID 0〜9の接続対応を確認します。この図はチャンネル対応表であり、ArduinoとPCA9685本体の配線図ではありません。</p>
+        <figure class="figure-card">
+          <a href="assets/images/PCA9685_CHID.png" target="_blank" rel="noopener noreferrer">
+            <img src="assets/images/PCA9685_CHID.png" alt="Physical GearのServo IDとPCA9685チャンネル対応表" loading="lazy">
+          </a>
+          <figcaption>画像内のServo IDとPCA9685チャンネルの対応を維持してください。</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="step-03" class="step-section">
+      <div class="container">
+        <p class="step-number">03</p>
+        <h2>STLのパーツ群</h2>
+        <p class="section-intro">公開基本セットに含まれる主要な3Dプリント部品の名称と形状を確認します。</p>
+        <figure class="figure-card">
+          <a href="assets/images/00_PhysicalGear_parts_catalog.png" target="_blank" rel="noopener noreferrer">
+            <img src="assets/images/00_PhysicalGear_parts_catalog.png" alt="Physical GearのSTL部品カタログ" loading="lazy">
+          </a>
+          <figcaption>画像をクリックすると原寸で表示します。</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="step-04" class="step-section alternate">
+      <div class="container">
+        <p class="step-number">04</p>
+        <h2>基本パーツの組み立て方</h2>
+        <p class="section-intro">基本ユニット、角度制御ユニット、1軸回転ユニットの構成を確認します。</p>
+        <figure class="figure-card">
+          <a href="assets/images/01_PhysicalGear_joint_units__Assembly.png" target="_blank" rel="noopener noreferrer">
+            <img src="assets/images/01_PhysicalGear_joint_units__Assembly.png" alt="Physical Gear関節ユニットの組立構成図" loading="lazy">
+          </a>
+          <figcaption>使用するスペーサーは組立位置に合わせて選択します。</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="step-05" class="step-section">
+      <div class="container">
+        <p class="step-number">05</p>
+        <h2>ディスクロールへのBB弾挿入</h2>
+        <p class="section-intro">InnerDiskとOuterDiskのくぼみに6mm BB弾を入れ、組立後にBB弾が内部で滑らかに動くことを確認します。</p>
+        <figure class="figure-card">
+          <a href="assets/images/PhysicalGear_DiskRoll_Assembly.png" target="_blank" rel="noopener noreferrer">
+            <img src="assets/images/PhysicalGear_DiskRoll_Assembly.png" alt="Physical Gear DiskRollへの6mm BB弾挿入と組立図" loading="lazy">
+          </a>
+          <figcaption>画像をクリックすると原寸で表示します。</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="step-06" class="step-section alternate">
+      <div class="container">
+        <p class="step-number">06</p>
+        <h2>ボディの組み立て</h2>
+        <p class="section-intro">首、ボディ支持部、BodyBlock、接続パーツを組み合わせます。首の回転ユニットには上部レールを使用しません。</p>
+        <figure class="figure-card">
+          <a href="assets/images/02_PhysicalGear_Body_Neck_Assembly.png" target="_blank" rel="noopener noreferrer">
+            <img src="assets/images/02_PhysicalGear_Body_Neck_Assembly.png" alt="Physical Gearボディと首ユニットの組立構成図" loading="lazy">
+          </a>
+          <figcaption>元図面の部品構成と向きを確認しながら組み立ててください。</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="step-07" class="step-section">
+      <div class="container">
+        <p class="step-number">07</p>
+        <h2>全体の組み上げ</h2>
+        <p class="section-intro">角度制御ユニットと1軸回転ユニットを組み合わせた左右アームを、首・ボディへ接続して上半身を構成します。</p>
+        <figure class="figure-card">
+          <a href="assets/images/03_PhysicalGear_Arm_Assembly.png" target="_blank" rel="noopener noreferrer">
+            <img src="assets/images/03_PhysicalGear_Arm_Assembly.png" alt="Physical Gear左右アームと上半身の組立構成図" loading="lazy">
+          </a>
+          <figcaption>図面に示されている構成のみを掲載しています。</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="distribution-note">
+      <div class="container">
+        <h2>配布について</h2>
+        <p>GitHubでは紹介、組立資料、将来の公開ソースを掲載します。STL、Windows EXE、Unityアセット、Arduinoスケッチを含む配布ZIPはBOOTHから提供する予定です。</p>
+        <p>BOOTHの商品URLは未確定のため、現在はダウンロードボタンを表示していません。GitHub Releasesには配布ZIPを置きません。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">Physical Gear Public · PROJECT SALIERI · © 2026 Studio Hazama 714</div>
+  </footer>
+</body>
+</html>
