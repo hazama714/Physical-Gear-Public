@@ -378,6 +378,32 @@ h1 {
 .distribution-note h2 { color: #fff; }
 .distribution-note p { max-width: 900px; margin: 0 0 12px; }
 
+/* BOOTH download button */
+.distribution-note .video-link a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  padding: 14px 24px;
+  border: 2px solid #ffffff;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #102f4a;
+  font-size: 1rem;
+  font-weight: 800;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.distribution-note .video-link a:hover {
+  background: #dff3ff;
+  color: #102f4a;
+}
+
+.distribution-note .video-link a:focus-visible {
+  outline: 3px solid #ffe58f;
+  outline-offset: 3px;
+}
 .footer {
   padding: 28px 0 40px;
   color: #6a7d8c;
