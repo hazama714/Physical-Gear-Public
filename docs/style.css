@@ -166,6 +166,63 @@ h1 {
 
 .signature { margin-top: 32px !important; color: var(--navy); }
 
+.requirements {
+  padding: 64px 0;
+  background: var(--bg);
+  border-block: 1px solid var(--line);
+}
+
+.requirements h2 {
+  margin: 0 0 24px;
+  color: var(--navy);
+  font-size: clamp(1.75rem, 4vw, 2.65rem);
+  letter-spacing: -0.025em;
+}
+
+.requirements-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 12px 32px rgba(16, 47, 74, 0.07);
+}
+
+.requirements table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.requirements th,
+.requirements td {
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.requirements thead th {
+  color: #fff;
+  background: var(--navy);
+}
+
+.requirements tbody th {
+  width: 220px;
+  color: var(--navy);
+  background: var(--sky);
+}
+
+.requirements tbody tr:last-child th,
+.requirements tbody tr:last-child td { border-bottom: 0; }
+
+.requirements ul { margin: 0; padding-left: 1.25em; }
+.requirements li + li { margin-top: 4px; }
+
+.requirements-note {
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
 .contents {
   padding: 64px 0;
   background: #e7f0f6;
@@ -223,6 +280,8 @@ h1 {
 }
 
 .figure-card {
+  width: 100%;
+  max-width: 360px;
   margin: 0;
   padding: 14px;
   border: 1px solid var(--line);
@@ -232,7 +291,10 @@ h1 {
 }
 
 .figure-card a {
-  display: block;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
   border-radius: 10px;
   background: #eef2f5;
@@ -241,7 +303,8 @@ h1 {
 .figure-card img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: contain;
 }
 
 .figure-card figcaption {
@@ -274,6 +337,7 @@ h1 {
   .contents-grid { grid-template-columns: 1fr; }
   .philosophy, .step-section { padding: 56px 0; }
   .contents, .distribution-note { padding: 48px 0; }
+  .requirements { padding: 48px 0; }
 }
 
 @media (max-width: 520px) {
@@ -284,6 +348,39 @@ h1 {
   .figure-card { padding: 8px; border-radius: 12px; }
   .hero-summary { padding: 18px 20px; }
   .prose p, .section-intro { overflow-wrap: anywhere; }
+
+  .requirements-table-wrap {
+    overflow: visible;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .requirements table,
+  .requirements tbody,
+  .requirements tr,
+  .requirements th,
+  .requirements td { display: block; width: 100%; }
+
+  .requirements thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  .requirements tr {
+    margin-bottom: 14px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: #fff;
+  }
+
+  .requirements th,
+  .requirements td { padding: 14px 16px; border-bottom: 0; }
+  .requirements tbody th { width: 100%; }
 }
 
 @media (max-width: 400px) {
